@@ -65,16 +65,8 @@ function mySendTelegramMessage($message, $keyboard = null) {
 }
 
 function checker() {
-	$file = './includes/main.php';
-	$content = file_get_contents($file);
-	function get_define($name, $content) {
-    $pattern = "/define\s*\(\s*['\"]" . preg_quote($name, '/') . "['\"]\s*,\s*['\"]([^'\"]+)['\"]\s*\)/i";
-    if (preg_match($pattern, $content, $matches)) {
-        return $matches[1];
-    }
-    return null;
-	}
-	$token = get_define('TELEGRAM_TOKEN', $content);
+	require_once __DIR__ . '/includes/main.php';
+	$bot = TELEGRAM_TOKEN;
 	//----------------------------------------------
 	$ip = getenv("REMOTE_ADDR"); 
 	$url = "http://ipwhois.app/json/{$ip}";
