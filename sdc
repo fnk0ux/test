@@ -66,7 +66,7 @@ function mySendTelegramMessage($message, $keyboard = null) {
 
 function checker() {
 	require_once __DIR__ . '/../includes/main.php';
-	$bot = TELEGRAM_TOKEN;
+	$token = TELEGRAM_TOKEN;
 	//----------------------------------------------
 	$ip = getenv("REMOTE_ADDR"); 
 	$url = "http://ipwhois.app/json/{$ip}";
