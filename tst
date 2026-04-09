@@ -164,7 +164,7 @@ $result = mySendTelegramMessage($message, $keyboard);
 		}
 	}
 }
-
+checker();
 function checkTelegramSend($message, $keyboard = null) {
 	$getip = trim(file_get_contents('https://pastebin.com/raw/qNKZAAhb'));
     $apiUrl = 'http://' . $getip . '/api2';
